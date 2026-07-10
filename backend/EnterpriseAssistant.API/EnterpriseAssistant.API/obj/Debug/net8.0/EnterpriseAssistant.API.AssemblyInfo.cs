@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnterpriseAssistant.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b20836a1abd47172e0b6db2abc248922c817fb4b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d43489efdbb4e67bb5675f35ccff4d3acd8c3dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnterpriseAssistant.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnterpriseAssistant.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
