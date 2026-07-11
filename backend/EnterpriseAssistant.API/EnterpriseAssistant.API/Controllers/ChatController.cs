@@ -1,3 +1,4 @@
+using EnterpriseAssistant.API.Interfaces;
 using EnterpriseAssistant.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,16 +9,20 @@ namespace EnterpriseAssistant.API.Controllers
     [Route("api/[controller]")]
     public class ChatController : ControllerBase
     {
+        public IChatService ChatService { get; }
+
+        public ChatController(IChatService chatService)
+        {
+            ChatService = chatService;
+        }
+
         [HttpPost]
         public IActionResult Post([FromBody] ChatRequest request)
         {
-            // Placeholder implementation - replace with actual chat logic
-            return Ok(new ChatResponse
-            {
-
-                Answer = "Employees receive 20 vacation days.",
-                Source = "VacationPolicy.pdf"
-            });
+            var response = ChatService.GetChatResponse(request);
+            return Ok(response);
         }
     }
 }
+
+
