@@ -1,6 +1,5 @@
 using EnterpriseAssistant.API.Interfaces;
 using EnterpriseAssistant.API.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnterpriseAssistant.API.Controllers
@@ -9,7 +8,7 @@ namespace EnterpriseAssistant.API.Controllers
     [Route("api/[controller]")]
     public class ChatController : ControllerBase
     {
-        public IChatService ChatService { get; }
+        private readonly IChatService ChatService;
 
         public ChatController(IChatService chatService)
         {
@@ -17,9 +16,9 @@ namespace EnterpriseAssistant.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] ChatRequest request)
+        public async Task<IActionResult> Post([FromBody] ChatRequest request)
         {
-            var response = ChatService.GetChatResponse(request);
+            var response = await ChatService.GetChatResponse(request, CancellationToken.None);
             return Ok(response);
         }
     }
