@@ -8,17 +8,17 @@ namespace EnterpriseAssistant.API.Controllers
     [Route("api/[controller]")]
     public class ChatController : ControllerBase
     {
-        private readonly IChatService ChatService;
+        private readonly IChatService _chatService;
 
         public ChatController(IChatService chatService)
         {
-            ChatService = chatService;
+            _chatService = chatService;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ChatRequest request, CancellationToken cancellationToken)
         {
-            var response = await ChatService.GetChatResponse(request, cancellationToken);
+            var response = await _chatService.GetChatResponse(request, cancellationToken);
             return Ok(response);
         }
     }
