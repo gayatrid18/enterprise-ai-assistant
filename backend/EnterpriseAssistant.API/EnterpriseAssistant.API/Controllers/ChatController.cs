@@ -16,9 +16,9 @@ namespace EnterpriseAssistant.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ChatRequest request)
+        public async Task<IActionResult> Post([FromBody] ChatRequest request, CancellationToken cancellationToken)
         {
-            var response = await ChatService.GetChatResponse(request, CancellationToken.None);
+            var response = await ChatService.GetChatResponse(request, cancellationToken);
             return Ok(response);
         }
     }
