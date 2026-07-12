@@ -1,5 +1,3 @@
-using System;
-
 namespace EnterpriseAssistant.API.Models;
 
 public class DocumentUploadResponse

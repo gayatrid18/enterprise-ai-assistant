@@ -1,6 +1,5 @@
 using EnterpriseAssistant.API.Interfaces;
 using EnterpriseAssistant.API.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnterpriseAssistant.API.Controllers
