@@ -5,7 +5,7 @@ namespace EnterpriseAssistant.API.Services;
 
 public class PdfTextExtractor : IPdfTextExtractor
 {
-    public async Task<IReadOnlyList<string>> ExtractTextAsync(string filePath)
+    public Task<IReadOnlyList<string>> ExtractTextAsync(string filePath)
     {
         if (String.IsNullOrWhiteSpace(filePath))
         {
@@ -33,6 +33,6 @@ public class PdfTextExtractor : IPdfTextExtractor
             }
         }
 
-        return pageTexts.AsReadOnly();
+        return Task.FromResult<IReadOnlyList<string>>(pageTexts);
     }
 }

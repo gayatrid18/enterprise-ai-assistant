@@ -5,6 +5,12 @@ namespace EnterpriseAssistant.API.Services;
 
 public class DocumentService : IDocumentService
 {
+    private readonly IPdfTextExtractor _pdfTextExtractor;
+    public DocumentService(IPdfTextExtractor pdfTextExtractor)
+    {
+        _pdfTextExtractor = pdfTextExtractor;
+    }
+    
     public async Task<DocumentUploadResponse> UploadAsync(IFormFile file, CancellationToken cancellationToken)
     {
 
