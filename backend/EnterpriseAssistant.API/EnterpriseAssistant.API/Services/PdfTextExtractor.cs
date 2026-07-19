@@ -35,4 +35,5 @@ public class PdfTextExtractor : IPdfTextExtractor
 
         return Task.FromResult<IReadOnlyList<string>>(pageTexts);
     }
+    
 }
